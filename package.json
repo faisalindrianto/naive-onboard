@@ -10,8 +10,10 @@
     "type-check": "vue-tsc --noEmit"
   },
   "dependencies": {
+    "axios": "^0.21.1",
     "naive-ui": "^2.30.8",
     "pinia": "^2.0.14",
+    "uuid": "^8.3.2",
     "vfonts": "^0.0.3",
     "vue": "^3.2.37",
     "vue-router": "^4.0.16"
