@@ -1,8 +1,10 @@
 import { defineStore } from 'pinia'
+import axios from 'axios'
 
 export const useClientState = defineStore('user', {
   state: () => {
     return {
+      countryList: [],
       clients: [
         {
           businessProfile: {
@@ -53,7 +55,10 @@ export const useClientState = defineStore('user', {
             primaryCountry: 1,
             currencyPair: 'AED'
           },
-          uuid: '7729ea59-e60c-408a-83c1'
+          uuid: '7729ea59-e60c-408a-83c1',
+          status: 'PENDING',
+          createdAt: new Date(),
+          updatedAt: new Date(),
         },
         {
           businessProfile: {
@@ -104,9 +109,19 @@ export const useClientState = defineStore('user', {
             primaryCountry: 1,
             currencyPair: 'AED'
           },
-          uuid: '7729ea59-e60c-408a-83c1'
+          uuid: '7729ea59-e60c-408a-83c1',
+          status: 'PENDING',
+          createdAt: new Date(),
+          updatedAt: new Date(),
         }
-      ]
+      ],
+    }
+  },
+  actions: {
+    getCountryList() {
+      axios.get('https://apiuat.inft.co/api/v1/countries?sort=name+ASC').then(result => {
+        this.countryList = result.data.countries
+      })
     }
   }
 })
