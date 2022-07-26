@@ -5,7 +5,7 @@ import type { GlobalThemeOverrides } from 'naive-ui'
 
 const themeOverrides: GlobalThemeOverrides = {
   common: {
-    borderRadius: '16px',
+    borderRadius: '20px',
   },
 }
 </script>
